@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		214F9FC325C86150002473EB /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F9FC225C86150002473EB /* MainMenuView.swift */; };
 		21D0C91625C6E71300AF9F36 /* UI_practiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D0C91525C6E71300AF9F36 /* UI_practiceApp.swift */; };
 		21D0C91825C6E71300AF9F36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D0C91725C6E71300AF9F36 /* ContentView.swift */; };
 		21D0C91A25C6E71400AF9F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21D0C91925C6E71400AF9F36 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		214F9FC225C86150002473EB /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		21D0C91225C6E71300AF9F36 /* UI_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D0C91525C6E71300AF9F36 /* UI_practiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_practiceApp.swift; sourceTree = "<group>"; };
 		21D0C91725C6E71300AF9F36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				21D0C91525C6E71300AF9F36 /* UI_practiceApp.swift */,
 				21D0C91725C6E71300AF9F36 /* ContentView.swift */,
+				214F9FC225C86150002473EB /* MainMenuView.swift */,
 				21D0C91925C6E71400AF9F36 /* Assets.xcassets */,
 				21D0C91E25C6E71400AF9F36 /* Info.plist */,
 				21D0C91B25C6E71400AF9F36 /* Preview Content */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				214F9FC325C86150002473EB /* MainMenuView.swift in Sources */,
 				21D0C91825C6E71300AF9F36 /* ContentView.swift in Sources */,
 				21D0C91625C6E71300AF9F36 /* UI_practiceApp.swift in Sources */,
 			);

@@ -13,59 +13,58 @@ struct ContentView: View {
     @State var index = 0
     
     var body: some View {
-        GeometryReader { _ in
-            VStack {
-                Image("logo")
-                    .resizable()
-                    .frame(width: 70, height: 70)
-                
-                ZStack {
-                    SingUp(index: self.$index)
-                        .zIndex(Double(self.index))
-                    Login(index: self.$index)
-                }
-                
-                HStack(spacing: 15) {
-                    Rectangle()
-                        .fill(Color("Color1"))
-                        .frame(height: 1)
+        NavigationView{
+            GeometryReader { _ in
+                VStack {
                     
-                    Text("OR")
-                    
-                    Rectangle()
-                        .fill(Color("Color1"))
-                        .frame(height: 1)
-                }
-                .padding(.horizontal, 30)
-                .padding(.top, 50)
-                
-                HStack(spacing: 25) {
-                    Button(action: {
-                        //
-                    }) {
-                        Image("apple_logo")
-                            .resizable()
-                            .renderingMode(.original)
-                            .frame(width: 50, height: 50)
-                            
+                    ZStack {
+                        SingUp(index: self.$index)
+                            .zIndex(Double(self.index))
+                        Login(index: self.$index)
                     }
                     
-                    Button(action: {
-                        //
-                    }) {
-                        Image("google_logo")
-                            .resizable()
-                            .renderingMode(.original)
-                            .frame(width: 50, height: 50)
-                            
+                    HStack(spacing: 15) {
+                        Rectangle()
+                            .fill(Color("Color1"))
+                            .frame(height: 1)
+                        
+                        Text("OR")
+                        
+                        Rectangle()
+                            .fill(Color("Color1"))
+                            .frame(height: 1)
                     }
+                    .padding(.horizontal, 30)
+                    .padding(.top, 50)
                     
+                    HStack(spacing: 25) {
+                        Button(action: {
+                            //
+                        }) {
+                            Image("apple_logo")
+                                .resizable()
+                                .renderingMode(.original)
+                                .frame(width: 50, height: 50)
+                            
+                        }
+                        
+                        Button(action: {
+                            //
+                        }) {
+                            Image("google_logo")
+                                .resizable()
+                                .renderingMode(.original)
+                                .frame(width: 50, height: 50)
+                            
+                        }
+                        
+                    }
+                    .padding(.top, 30)
                 }
-                .padding(.top, 30)
+                .padding(.vertical)
             }
-            .padding(.vertical)
+            .background(Color("Color").edgesIgnoringSafeArea(.all))
         }
-        .background(Color("Color").edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -127,12 +126,12 @@ struct Login : View {
                     
                 } .padding(.top, 30)
                 
-              VStack{
+                VStack{
                     
                     HStack(spacing: 15){
                         
                         Image(systemName: "envelope.fill")
-                        .foregroundColor(Color("Color1"))
+                            .foregroundColor(Color("Color1"))
                         
                         TextField("Email Address", text: self.$email)
                     }
@@ -152,7 +151,7 @@ struct Login : View {
                     Divider()
                         .background(Color.white.opacity(0.5))
                 } .padding(.horizontal)
-                    .padding(.top, 30)
+                .padding(.top, 30)
                 
                 HStack {
                     Spacer(minLength: 0)
@@ -164,24 +163,22 @@ struct Login : View {
                             .foregroundColor(Color.white.opacity(0.6))
                     }
                 } .padding(.horizontal)
-                    .padding(.top, 30)
+                .padding(.top, 30)
                 
             }   .padding()
-                .padding(.bottom, 65)
-                .background(Color("Color2"))
-                .clipShape(CShape())
-                .contentShape(CShape())
-                .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
-                .onTapGesture {
-                    self.index = 0
+            .padding(.bottom, 65)
+            .background(Color("Color2"))
+            .clipShape(CShape())
+            .contentShape(CShape())
+            .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
+            .onTapGesture {
+                self.index = 0
             }
             .cornerRadius(35)
             .padding(.horizontal, 20)
             
-            
-            Button(action: {
-                //
-            }) {
+            NavigationLink(
+                destination: MainMenuView()){
                 Text("LOGIN")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
@@ -227,7 +224,7 @@ struct SingUp: View {
                 VStack {
                     HStack(spacing: 15) {
                         Image(systemName: "envelope.fill")
-                        .foregroundColor(Color("Color1"))
+                            .foregroundColor(Color("Color1"))
                         TextField("Email Address", text: self.$email)
                     }
                     Divider().background(Color.white.opacity(0.5))
@@ -246,7 +243,7 @@ struct SingUp: View {
                     Divider()
                         .background(Color.white.opacity(0.5))
                 } .padding(.horizontal)
-                    .padding(.top, 30)
+                .padding(.top, 30)
                 
                 VStack {
                     HStack(spacing: 15) {
@@ -256,7 +253,7 @@ struct SingUp: View {
                     }
                     Divider().background(Color.white.opacity(0.5))
                 } .padding(.horizontal)
-                    .padding(.top, 30)
+                .padding(.top, 30)
                 
             }
             .padding()
@@ -271,21 +268,21 @@ struct SingUp: View {
             .cornerRadius(35)
             .padding(.horizontal,20)
             
-            Button(action: {
-                //
-            }) {
-                Text("SIGNUP")
+            NavigationLink(
+                destination: MainMenuView()){
+                Text("SIGN UP")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .padding(.vertical)
                     .padding(.horizontal, 50)
                     .background(Color("Color1"))
                     .clipShape(Capsule())
-                    .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: -5)
+                    .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
             }
             .offset(y: 25)
             .opacity(self.index == 1 ? 1 : 0)
             
         }
     }
+    
 }
